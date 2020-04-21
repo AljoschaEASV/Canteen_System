@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import Controller.Connector;
+
+import java.sql.Connection;
 
 public class Main extends Application {
 
@@ -24,6 +27,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        Connector n = new Connector();
+        n.createConnection();
         launch(args);
     }
 }
