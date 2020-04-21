@@ -59,7 +59,6 @@ public class Controller {
 
         }
     }
-
     public void addItemToLBasket(){}
 
 
@@ -81,6 +80,8 @@ public class Controller {
     public void showLastPurchase(){}
 
     public void displayAllPurchases(){}
+
+
 
 
 
