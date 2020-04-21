@@ -59,6 +59,32 @@ public class Controller {
 
         }
     }
+
+    public void addItemToLBasket(){}
+
+
+    public void deleteItemFromBasket(){}
+
+
+    public void showCurrentStockAvailable(){}
+
+
+    public void calculatePriceForItems(){}
+
+
+    public void displayTrendCurve(){}
+
+    public void pickAmountOfSelectedItem(){}
+
+    public void displayTotalPrice(){}
+
+    public void showLastPurchase(){}
+
+    public void displayAllPurchases(){}
+
+
+
+
 }
 
 
