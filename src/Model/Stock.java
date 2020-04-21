@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Sort of though as the Database Handler - From where our stock basicly comes from.
+ */
 public class Stock {
 
 	private int productID;
