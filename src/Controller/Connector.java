@@ -1,5 +1,6 @@
-/*package Controller;
 
+
+package Controller;
 import Model.Main;
 
 import java.sql.Connection;
@@ -27,4 +28,3 @@ public class Connector {
     }
 }
 
- */
