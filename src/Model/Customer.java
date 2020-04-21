@@ -10,6 +10,7 @@ public class Customer extends User {
 	private String cus_email = "";
 
 	/**
+	 *
 	 * @param name
 	 * @param address
 	 * @param contact
