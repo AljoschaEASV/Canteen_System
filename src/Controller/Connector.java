@@ -15,7 +15,8 @@ public class Connector {
     public java.sql.Connection createConnection() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=sample", "sa", "123456");
+            con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ECCO_Canteen", "sa", "123456");
+            System.out.println("Connected");
         } catch (ClassNotFoundException var2) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String)null, var2);
         } catch (SQLException var3) {
