@@ -2,6 +2,7 @@ package CanteenSysView;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
@@ -21,16 +22,16 @@ public class Controller {
     private Pane pnl_checkout;
 
     @FXML
-    private JFXButton btn_checkOut;
+    private JFXButton btnCheckOut;
 
     @FXML
-    private JFXButton btn_drinks;
+    private JFXButton btnDrinks;
 
     @FXML
-    private JFXButton btn_fruit;
+    private JFXButton btnFruits;
 
     @FXML
-    private JFXButton btn_warmLunch;
+    private JFXButton btnWarmLunch;
 
     @FXML
     private JFXListView<String> orderList;
@@ -40,18 +41,31 @@ public class Controller {
 
     public void handleButtonAction(javafx.event.ActionEvent event) {
         {
-            if (event.getSource() == btn_warmLunch) {
+            if (event.getSource() == btnWarmLunch) {
                 pnl_warmLunch.toFront();
-            } else if (event.getSource() == btn_drinks) {
+            } else if (event.getSource() == btnDrinks) {
                 pnl_drinks.toFront();
-            } else if (event.getSource() == btn_fruit) {
+            } else if (event.getSource() == btnFruits) {
                 pnl_fruit.toFront();
-            } else if (event.getSource() == btn_checkOut) {
+            } else if (event.getSource() == btnCheckOut) {
                 pnl_checkout.toFront();
             }
 
 
         }
+    }
+
+    public void addCategoryClicked(ActionEvent event)
+    {
+
+    }
+    public void addProductClicked(ActionEvent event)
+    {
+
+    }
+    public void viewSalesClicked(ActionEvent event)
+    {
+
     }
 
     public void addItemToLBasket() {
