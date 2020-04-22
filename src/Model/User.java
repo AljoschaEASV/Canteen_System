@@ -2,97 +2,90 @@ package Model;
 
 public abstract class User {
 
-	private String name;
-	private String adress;
-	private String contact;
-	private String email;
-	private String cardID;
-	private double balance;
+    private String name;
+    private String adress;
+    private String contact;
+    private String email;
+    private String cardID;
+    private double balance;
 
-	public String getName() {
-		return this.name;
-	}
+    /**
+     * @param name
+     * @param address
+     * @param contact
+     * @param email
+     * @param cardID
+     * @param balance
+     */
+    public User(int name, int address, int contact, int email, int cardID, int balance) {
+        // TODO - implement User.User
+        throw new UnsupportedOperationException();
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public String getAdress() {
-		return this.adress;
-	}
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * 
-	 * @param adress
-	 */
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
+    public String getAdress() {
+        return this.adress;
+    }
 
-	public String getContact() {
-		return this.contact;
-	}
+    /**
+     * @param adress
+     */
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
 
-	/**
-	 * 
-	 * @param contact
-	 */
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
+    public String getContact() {
+        return this.contact;
+    }
 
-	public String getEmail() {
-		return this.email;
-	}
+    /**
+     * @param contact
+     */
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
 
-	/**
-	 * 
-	 * @param email
-	 */
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return this.email;
+    }
 
-	public String getCardID() {
-		return this.cardID;
-	}
+    /**
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	/**
-	 * 
-	 * @param cardID
-	 */
-	public void setCardID(String cardID) {
-		this.cardID = cardID;
-	}
+    public String getCardID() {
+        return this.cardID;
+    }
 
-	public double getBalance() {
-		return this.balance;
-	}
+    /**
+     * @param cardID
+     */
+    public void setCardID(String cardID) {
+        this.cardID = cardID;
+    }
 
-	/**
-	 * 
-	 * @param balance
-	 */
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
+    public double getBalance() {
+        return this.balance;
+    }
 
-	/**
-	 * 
-	 * @param name
-	 * @param address
-	 * @param contact
-	 * @param email
-	 * @param cardID
-	 * @param balance
-	 */
-	public User(int name, int address, int contact, int email, int cardID, int balance) {
-		// TODO - implement User.User
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * @param balance
+     */
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 
 }

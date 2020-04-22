@@ -18,9 +18,9 @@ public class Connector {
             con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ECCO_Canteen", "sa", "123456");
             System.out.println("Connected");
         } catch (ClassNotFoundException var2) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String)null, var2);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String) null, var2);
         } catch (SQLException var3) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String)null, var3);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String) null, var3);
         }
 
         return con;
