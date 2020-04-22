@@ -1,4 +1,4 @@
-package Domain;
+package CanteenSysDomain;
 
 /**
  * Sort of though as the Database Handler - From where our stock basicly comes from.

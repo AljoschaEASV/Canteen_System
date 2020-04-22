@@ -1,4 +1,4 @@
-package Application;
+package CanteenSysApplication;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;

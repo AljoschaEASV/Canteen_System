@@ -1,4 +1,4 @@
-package Domain;
+package CanteenSysDomain;
 
 import java.time.LocalDateTime;
 

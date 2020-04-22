@@ -1,4 +1,4 @@
-package Domain;
+package CanteenSysDomain;
 
 public class Manager extends User {
 

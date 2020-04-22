@@ -1,6 +1,6 @@
-package Application;
+package CanteenSysApplication;
 
-import Domain.Main;
+import CanteenSysDomain.Main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

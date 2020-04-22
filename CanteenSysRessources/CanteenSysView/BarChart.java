@@ -1,4 +1,4 @@
-package View;
+package CanteenSysView;
 
 public class BarChart {
 }

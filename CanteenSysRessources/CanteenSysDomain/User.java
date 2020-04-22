@@ -1,4 +1,4 @@
-package Domain;
+package CanteenSysDomain;
 
 public abstract class User {
 
