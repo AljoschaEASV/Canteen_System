@@ -1,6 +1,6 @@
-package Controller;
+package Application;
 
-import Model.Main;
+import Domain.Main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
