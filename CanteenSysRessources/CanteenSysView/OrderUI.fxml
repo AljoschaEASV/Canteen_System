@@ -1,80 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="CanteenSysApplication.DatabaseConnector">
     <children>
-        <AnchorPane layoutX="240.0" layoutY="-1.0" prefHeight="565.0" prefWidth="615.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane layoutX="240.0" layoutY="-1.0" prefHeight="565.0" prefWidth="615.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>
-                <DropShadow />
+                <DropShadow/>
             </effect>
             <children>
-                <Pane fx:id="pnl_checkout" layoutX="11.0" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0" />
-                <Pane fx:id="pnl_drinks" layoutX="11.0" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #2b3a67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0" />
-                <Pane fx:id="pnl_fruit" layoutX="11.0" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #272D2d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0" />
-                <Pane fx:id="pnl_warmLunch" layoutX="11.0" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #23CE6B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0" />
+                <Pane fx:id="pnl_checkout" layoutX="11.0" prefHeight="615.0" prefWidth="613.0"
+                      style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0"
+                      AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0"/>
+                <Pane fx:id="pnl_drinks" layoutX="11.0" prefHeight="615.0" prefWidth="613.0"
+                      style="-fx-background-color: #2b3a67;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0"
+                      AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0"/>
+                <Pane fx:id="pnl_fruit" layoutX="11.0" prefHeight="615.0" prefWidth="613.0"
+                      style="-fx-background-color: #272D2d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0"
+                      AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0"/>
+                <Pane fx:id="pnl_warmLunch" layoutX="11.0" prefHeight="615.0" prefWidth="613.0"
+                      style="-fx-background-color: #23CE6B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0"
+                      AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0"/>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="6.0" layoutY="1.0" prefHeight="614.0" prefWidth="239.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="1.0">
+        <AnchorPane layoutX="6.0" layoutY="1.0" prefHeight="614.0" prefWidth="239.0"
+                    style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="1.0">
             <children>
-                <AnchorPane layoutX="55.0" layoutY="1.0" prefHeight="613.0" prefWidth="201.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="1.0">
+                <AnchorPane layoutX="55.0" layoutY="1.0" prefHeight="613.0" prefWidth="201.0"
+                            style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.topAnchor="1.0">
                     <effect>
-                        <DropShadow />
+                        <DropShadow/>
                     </effect>
                     <children>
-                  <VBox layoutY="14.0" prefHeight="599.0" prefWidth="201.0">
-                     <children>
-                              <Label text="Canteen System">
-                                  <font>
-                                      <Font size="25.0" />
-                                  </font>
-                              </Label>
-                            <JFXButton fx:id="btn_warmLunch" onAction="#handleButtonAction" prefHeight="53.0" prefWidth="247.0" text="Warm Lunch" underline="true" />
-                            <JFXButton fx:id="btn_fruit" onAction="#handleButtonAction" prefHeight="53.0" prefWidth="247.0" text="Fruit" underline="true" />
-                            <JFXButton fx:id="btn_drinks" onAction="#handleButtonAction" prefHeight="53.0" prefWidth="247.0" text="Drinks" underline="true" />
-                            <Label text="Order list">
-                                <font>
-                                    <Font size="16.0" />
-                                </font>
-                            </Label>
-                              <JFXListView prefHeight="197.0" prefWidth="166.0" />
-                              <JFXButton fx:id="btn_checkOut" onAction="#handleButtonAction" prefHeight="53.0" prefWidth="186.0" text="Check Out" underline="true" />
-                     </children>
-                  </VBox>
+                        <VBox layoutY="14.0" prefHeight="599.0" prefWidth="201.0">
+                            <children>
+                                <Label text="Canteen System">
+                                    <font>
+                                        <Font size="25.0"/>
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="btn_warmLunch" prefHeight="53.0" prefWidth="247.0" text="Warm Lunch"
+                                           underline="true"/>
+                                <JFXButton fx:id="btn_fruit" prefHeight="53.0" prefWidth="247.0" text="Fruit"
+                                           underline="true"/>
+                                <JFXButton fx:id="btn_drinks" prefHeight="53.0" prefWidth="247.0" text="Drinks"
+                                           underline="true"/>
+                                <Label text="Order list">
+                                    <font>
+                                        <Font size="16.0"/>
+                                    </font>
+                                </Label>
+                                <JFXListView prefHeight="197.0" prefWidth="166.0"/>
+                                <JFXButton fx:id="btn_checkOut" prefHeight="53.0" prefWidth="186.0" text="Check Out"
+                                           underline="true"/>
+                            </children>
+                        </VBox>
                     </children>
                 </AnchorPane>
-                <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="7.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="7.0" layoutY="111.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@../Images/Ruby-Frost.jpg" />
+                        <Image url="@../CanteenSysView/Images/Ruby-Frost.jpg"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="13.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="13.0" layoutY="161.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@../Images/Drinks.jpg" />
+                        <Image url="@../CanteenSysView/Images/Drinks.jpg"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="97.0" fitWidth="42.0" layoutX="1.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="97.0" fitWidth="42.0" layoutX="1.0" layoutY="65.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@../Images/8210364-bowl-of-soup.jpg" />
+                        <Image url="@../CanteenSysView/Images/8210364-bowl-of-soup.jpg"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="4.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="216.0">
+                <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="4.0" layoutY="564.0" pickOnBounds="true"
+                           preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="4.0"
+                           AnchorPane.rightAnchor="216.0">
                     <image>
-                        <Image url="@../Images/checkout.png" />
+                        <Image url="@../CanteenSysView/Images/checkout.png"/>
                     </image>
                 </ImageView>
             </children>
             <effect>
-                <DropShadow />
+                <DropShadow/>
             </effect>
         </AnchorPane>
     </children>

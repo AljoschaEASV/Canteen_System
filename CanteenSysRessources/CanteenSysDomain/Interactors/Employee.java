@@ -1,4 +1,4 @@
-package CanteenSysDomain;
+package CanteenSysDomain.Interactors;
 
 public class Employee extends User {
 

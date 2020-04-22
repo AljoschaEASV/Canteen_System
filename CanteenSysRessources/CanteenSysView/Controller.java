@@ -1,6 +1,7 @@
 package CanteenSysView;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
@@ -30,6 +31,9 @@ public class Controller {
 
     @FXML
     private JFXButton btn_warmLunch;
+
+    @FXML
+    private JFXListView<String> orderList;
 
 
 //
