@@ -1,104 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221"
+            fx:controller="Application.Controller">
     <children>
-        <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
             <effect>
-                <DropShadow />
+                <DropShadow/>
             </effect>
             <children>
                 <Pane fx:id="pnl_checkout" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #f0f7ff;">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="49.0" text="Payment Window">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="49.0"
+                               text="Payment Window">
                             <font>
-                                <Font size="18.0" />
+                                <Font size="18.0"/>
                             </font>
                         </Label>
-                        <TextField alignment="CENTER" layoutX="230.0" layoutY="239.0" promptText="Scan ID-Card" />
-                        <TextField alignment="CENTER" layoutX="231.0" layoutY="188.0" promptText="Total amount to be paid" />
-                        <Button alignment="CENTER" layoutX="399.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Cancel Transaction" textFill="#c31010" />
-                        <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
+                        <TextField alignment="CENTER" layoutX="230.0" layoutY="239.0" promptText="Scan ID-Card"/>
+                        <TextField alignment="CENTER" layoutX="231.0" layoutY="188.0"
+                                   promptText="Total amount to be paid"/>
+                        <Button alignment="CENTER" layoutX="399.0" layoutY="298.0" mnemonicParsing="false"
+                                prefHeight="102.0" prefWidth="118.0" text="Cancel Transaction" textFill="#c31010"/>
+                        <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false"
+                                prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f"/>
                     </children>
                 </Pane>
-            <TableView fx:id="tableview_items" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <TableView fx:id="tableview_items" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;"
+                    AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
-                <AnchorPane layoutY="1.0" prefHeight="615.0" prefWidth="48.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane layoutY="1.0" prefHeight="615.0" prefWidth="48.0" style="-fx-background-color: #fff;"
+                            AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
                     <effect>
-                        <DropShadow />
+                        <DropShadow/>
                     </effect>
                     <children>
-                        <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="3.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="3.0" layoutY="144.0" pickOnBounds="true"
+                                   preserveRatio="true">
                             <image>
-                                <Image url="@images/Ruby-Frost.jpg" />
+                                <Image url="@images/Ruby-Frost.jpg"/>
                             </image>
                         </ImageView>
-                      <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="268.0">
-                          <image>
-                              <Image url="@images/checkout.png" />
-                          </image>
-                      </ImageView>
+                        <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="309.0" pickOnBounds="true"
+                                   preserveRatio="true" AnchorPane.bottomAnchor="268.0">
+                            <image>
+                                <Image url="@images/checkout.png"/>
+                            </image>
+                        </ImageView>
                     </children>
                 </AnchorPane>
-                <JFXButton fx:id="btnWarmLunch" alignment="CENTER" layoutX="5.0" layoutY="75.0" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Warm Lunch" />
+                <JFXButton fx:id="btnWarmLunch" alignment="CENTER" layoutX="5.0" layoutY="75.0"
+                           onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Warm Lunch"/>
                 <ImageView fitHeight="33.0" fitWidth="48.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@images/8210364-bowl-of-soup.jpg" />
+                        <Image url="@images/8210364-bowl-of-soup.jpg"/>
                     </image>
                 </ImageView>
-                <JFXButton fx:id="btnDrinks" alignment="CENTER" layoutX="5.0" layoutY="191.0" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Drinks" />
-                <JFXButton fx:id="btnCheckOut" alignment="CENTER" layoutY="557.0" onAction="#handleButtonAction" prefHeight="44.0" prefWidth="239.0" text="Check Out" AnchorPane.bottomAnchor="1.0" />
-                <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="8.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                <JFXButton fx:id="btnDrinks" alignment="CENTER" layoutX="5.0" layoutY="191.0"
+                           onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Drinks"/>
+                <JFXButton fx:id="btnCheckOut" alignment="CENTER" layoutY="557.0" onAction="#handleButtonAction"
+                           prefHeight="44.0" prefWidth="239.0" text="Check Out" AnchorPane.bottomAnchor="1.0"/>
+                <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="8.0" layoutY="198.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@images/Drinks.jpg" />
+                        <Image url="@images/Drinks.jpg"/>
                     </image>
                 </ImageView>
                 <Label layoutX="61.0" layoutY="48.0" text="Canteen System" underline="true">
                     <font>
-                        <Font size="18.0" />
+                        <Font size="18.0"/>
                     </font>
                 </Label>
-                <JFXButton fx:id="btnFruits" alignment="CENTER" layoutX="5.0" layoutY="133.0" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Fruit" />
-                <MenuBar layoutX="54.0" layoutY="1.0" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #f0f7ff;">
+                <JFXButton fx:id="btnFruits" alignment="CENTER" layoutX="5.0" layoutY="133.0"
+                           onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Fruit"/>
+                <MenuBar layoutX="54.0" layoutY="1.0" prefHeight="27.0" prefWidth="83.0"
+                         style="-fx-background-color: #f0f7ff;">
                     <menus>
                         <Menu mnemonicParsing="false" text="Options">
                             <items>
-                                <MenuItem fx:id="addCategory" mnemonicParsing="false" onAction="#addCategoryClicked" text="Add Category" />
-                                <MenuItem fx:id="addProduct" mnemonicParsing="false" onAction="#addProductClicked" text="Add Product" />
-                                <MenuItem fx:id="viewSales" mnemonicParsing="false" onAction="#viewSalesClicked" text="view Sales" />
-                                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                                <MenuItem mnemonicParsing="false" text="Close" />
+                                <MenuItem fx:id="addCategory" mnemonicParsing="false" onAction="#addCategoryClicked"
+                                          text="Add Category"/>
+                                <MenuItem fx:id="addProduct" mnemonicParsing="false" onAction="#addProductClicked"
+                                          text="Add Product"/>
+                                <MenuItem fx:id="viewSales" mnemonicParsing="false" onAction="#viewSalesClicked"
+                                          text="view Sales"/>
+                                <MenuItem mnemonicParsing="false" text="Unspecified Action"/>
+                                <MenuItem mnemonicParsing="false" text="Close"/>
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
-            <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0">
-               <columns>
-                  <TableColumn fx:id="orderColumnName" prefWidth="115.0" text="Item" />
-                  <TableColumn fx:id="orderColumnPrice" prefWidth="66.0" text="Price" />
-               </columns>
-            </TableView>
+                <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0"
+                           prefWidth="182.0">
+                    <columns>
+                        <TableColumn fx:id="orderColumnName" prefWidth="115.0" text="Item"/>
+                        <TableColumn fx:id="orderColumnPrice" prefWidth="66.0" text="Price"/>
+                    </columns>
+                </TableView>
             </children>
             <effect>
-                <DropShadow />
+                <DropShadow/>
             </effect>
         </AnchorPane>
     </children>

@@ -18,12 +18,12 @@ public abstract class User {
      * @param balance
      */
     public User(String name, String address, String contact, String email, String cardID, double balance) {
-      this.name = name;
-      this.address = address;
-      this.contact = contact;
-      this.email = email;
-      this.cardID = cardID;
-      this.balance = balance;
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.email = email;
+        this.cardID = cardID;
+        this.balance = balance;
     }
 
     public String getName() {
