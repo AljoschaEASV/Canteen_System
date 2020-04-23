@@ -95,7 +95,6 @@ public class Controller {
                                         TableColumn col = new TableColumn(DBwrapper.getResultSet().getMetaData().getColumnName(i+1));
                                         col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
                                         tableview_orderBasket.getColumns().addAll(col);
-                                        System.out.println("Column ["+i+"] ");
                                     }
                                 } catch (SQLException e) {
                                     e.printStackTrace();
@@ -170,7 +169,6 @@ public class Controller {
             TableColumn col = new TableColumn(DBwrapper.getResultSet().getMetaData().getColumnName(i+1));
             col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
             tableview_items.getColumns().addAll(col);
-            System.out.println("Column ["+i+"] ");
         }
 
         while(DBwrapper.getResultSet().next()){
@@ -178,7 +176,6 @@ public class Controller {
             for(int i=1 ; i<=DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
                 row.add(DBwrapper.getResultSet().getString(i));
             }
-            System.out.println("Row added "+ row );
             itemsList.add(row);
         }
         tableview_items.setItems(itemsList);
