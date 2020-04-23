@@ -15,11 +15,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        preloader();
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/OrderUI.fxml"));
             Scene scene = new Scene(root);
@@ -28,16 +29,10 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        preloader();
-
     }
 
     public void preloader(){
         DatabaseConnector.createConnection();
-
-
-
 
         //testing sql query with view
         /*
