@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
@@ -39,6 +40,10 @@ public class Controller {
         fillList("WarmLunch");
     }
 
+    @FXML
+    void closeProgram(){
+        System.exit(-1);
+    }
     public void handleButtonAction(javafx.event.ActionEvent event) throws SQLException {
         {
             if (event.getSource() == btnWarmLunch) {

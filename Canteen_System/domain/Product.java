@@ -12,8 +12,7 @@ public class Product {
     private Date orderDate;
 
     public void addProduct() {
-        // TODO - implement Product.addProduct
-        throw new UnsupportedOperationException();
+
     }
 
     public void modifyProduct() {
