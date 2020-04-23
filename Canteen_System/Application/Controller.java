@@ -27,8 +27,6 @@ public class Controller {
     private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch;
     @FXML
     private TableView tableview_items, tableview_orderBasket;
-    @FXML
-    private TableColumn orderColumnName, orderColumnPrice;
 
     private ObservableList<ObservableList<String>> itemsList;
     private ObservableList<ObservableList<String>> basketList;
@@ -82,7 +80,7 @@ public class Controller {
 
     }
 
-    public void addItemToBasket(MouseEvent event) {
+    public void addItemToBasket() {
         try {
             tableview_items.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
@@ -120,6 +118,23 @@ public class Controller {
     }
 
     public void deleteItemFromBasket() {
+        try {
+            tableview_orderBasket.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    if(event.getButton().equals(MouseButton.PRIMARY)) {
+                        if (event.getClickCount() == 2) {
+                            basketList.remove(tableview_orderBasket.getSelectionModel().getSelectedItem());
+                            tableview_orderBasket.getSelectionModel().clearSelection();
+                            tableview_orderBasket.setItems(basketList);
+                        }
+                    }
+                }
+            });
+        }catch (NullPointerException e)
+        {
+            System.out.println("Error");
+        }
     }
 
     public void showCurrentStockAvailable() {
