@@ -8,6 +8,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,16 +22,25 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Callback;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Controller {
 
     @FXML
-    private Pane pnl_checkout;
+    private Pane pnl_checkout, pnlBarChart;
     @FXML
-    private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch;
+    private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch, btnBarChart;
     @FXML
     private TableView tableview_items, tableview_orderBasket;
+    @FXML
+    private TableColumn orderColumnName, orderColumnPrice;
+    @FXML
+    private LineChart<String , Integer> lineChart;
+    @FXML
+    private CategoryAxis x;
+    @FXML
+    private NumberAxis y;
 
     private ObservableList<ObservableList<String>> itemsList;
     private ObservableList<ObservableList<String>> basketList;
@@ -70,7 +83,7 @@ public class Controller {
     }
 
     public void viewSalesClicked(ActionEvent event) {
-
+        pnlBarChart.toFront();
     }
 
     public void checkBalanceClicked(ActionEvent event)
@@ -84,6 +97,26 @@ public class Controller {
         dialog.showAndWait();
 
     }
+
+
+    public void loadChart(ActionEvent event) throws SQLException {
+
+        // NOT DONE!!  "TimeDate" should be stored on the Xaxis. "Amount" should be stored on Yaxis. and every productname needs a XYChart.series
+
+
+        String query = "SELECT Item, Amount from InvoiceItemList";
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+
+        ResultSet rs = DatabaseConnector.createConnection().createStatement().executeQuery(query);
+
+        while (rs.next()) {
+            series.getData().add(new XYChart.Data<>(rs.getString(1), rs.getInt(2)));
+
+        }
+        lineChart.getData().add(series);
+    }
+
+
 
     public void addItemToBasket() {
         try {
