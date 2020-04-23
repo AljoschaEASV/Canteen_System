@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
     <children>
         <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>
@@ -36,7 +35,7 @@
                         <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
                     </children>
                 </Pane>
-            <TableView fx:id="tableview_items" onMouseClicked="#addItemToBasket" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <TableView fx:id="tableview_items" onMouseClicked="#addItemToBasket" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
@@ -51,11 +50,11 @@
                                 <Image url="@images/Ruby-Frost.jpg" />
                             </image>
                         </ImageView>
-                      <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="268.0">
-                          <image>
-                              <Image url="@images/checkout.png" />
-                          </image>
-                      </ImageView>
+                        <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="268.0">
+                            <image>
+                                <Image url="@images/checkout.png" />
+                            </image>
+                        </ImageView>
                     </children>
                 </AnchorPane>
                 <JFXButton fx:id="btnWarmLunch" alignment="CENTER" layoutX="5.0" layoutY="75.0" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="239.0" text="Warm Lunch" />
@@ -90,11 +89,7 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-            <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0">
-               <columns>
-                  <TableColumn fx:id="orderColumnItem" prefWidth="118.0" text="Item" />
-                  <TableColumn fx:id="orderColumnPrice" prefWidth="63.0" text="Price" />
-               </columns></TableView>
+                <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0" />
             </children>
             <effect>
                 <DropShadow />

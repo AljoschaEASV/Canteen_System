@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,9 +36,6 @@ public class Controller {
     private void initialize() throws SQLException {
         itemsList = FXCollections.observableArrayList();
         basketList = FXCollections.observableArrayList();
-
-        orderColumnName.setCellValueFactory(new PropertyValueFactory<>("ProductName"));
-        orderColumnPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
 
         fillList("WarmLunch");
     }
@@ -73,17 +71,33 @@ public class Controller {
 
     public void addItemToBasket(MouseEvent event) {
         try {
-            tableview_items.setOnMouseClicked(event1 -> {
-                if(event1.getButton().equals(MouseButton.PRIMARY)) {
-                    if (event1.getClickCount() == 2) {
-                        ObservableList<String> row;
-                        row = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
-                        row.remove(2,5);
+            tableview_items.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    if(event.getButton().equals(MouseButton.PRIMARY)) {
+                        if (event.getClickCount() == 2) {
+                            if(tableview_orderBasket.getItems().size()==0){
+                                DBwrapper.select("select ProductName, Price from Items");
+                                try {
+                                    for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
+                                        final int j = i;
+                                        TableColumn col = new TableColumn(DBwrapper.getResultSet().getMetaData().getColumnName(i+1));
+                                        col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
+                                        tableview_orderBasket.getColumns().addAll(col);
+                                        System.out.println("Column ["+i+"] ");
+                                    }
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                            }
 
-                        basketList.add(row);
-                        tableview_orderBasket.setItems(basketList);
+                            ObservableList<String> row = FXCollections.observableArrayList();
+                            row = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
+                            basketList.add(row);
+                            tableview_orderBasket.setItems(basketList);
+                        }
+
                     }
-
                 }
             });
         }catch (NullPointerException e)
