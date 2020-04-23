@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -68,6 +69,18 @@ public class Controller {
     }
 
     public void viewSalesClicked(ActionEvent event) {
+
+    }
+
+    public void checkBalanceClicked(ActionEvent event)
+    {
+        TextInputDialog dialog = new TextInputDialog();
+
+        dialog.setTitle("Check Balance");
+        dialog.setHeaderText("Please enter your ID");
+        dialog.setContentText("ID:");
+
+        dialog.showAndWait();
 
     }
 
