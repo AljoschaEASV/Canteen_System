@@ -166,12 +166,6 @@ public class Controller {
     }
 
     private void fillDrinksList() throws SQLException {
-        try {
-            DBwrapper.getResultSet().close();
-        } catch (SQLException e) {
-            System.out.println("resultset musste nicht geloescht werden");
-        }
-
         drinksList.clear();
         tableview_drinks.refresh();
 
