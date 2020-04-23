@@ -1,5 +1,7 @@
 package Application;
 
+import javafx.collections.ObservableList;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -67,4 +69,5 @@ public class DBwrapper {
             e.printStackTrace();
         }
     }
+
 }

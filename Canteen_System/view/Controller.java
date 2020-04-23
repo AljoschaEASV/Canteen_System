@@ -4,45 +4,34 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 public class Controller {
 
     @FXML
-    private Pane pnl_warmLunch;
-
+    private Pane pnl_warmlunch, pnl_fruit, pnl_drinks, pnl_checkout;
     @FXML
-    private Pane pnl_fruit;
-
-    @FXML
-    private Pane pnl_drinks;
-
-    @FXML
-    private Pane pnl_checkout;
-
-    @FXML
-    private JFXButton btnCheckOut;
-
-    @FXML
-    private JFXButton btnDrinks;
-
-    @FXML
-    private JFXButton btnFruits;
-
-    @FXML
-    private JFXButton btnWarmLunch;
-
+    private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch;
     @FXML
     private JFXListView<?> orderList;
+    @FXML
+    private TableView tableview_warmlunch;
 
+    @FXML
+    private void initialize(){
 
-//
+    }
 
     public void handleButtonAction(javafx.event.ActionEvent event) {
         {
             if (event.getSource() == btnWarmLunch) {
-                pnl_warmLunch.toFront();
+                pnl_warmlunch.toFront();
             } else if (event.getSource() == btnDrinks) {
                 pnl_drinks.toFront();
             } else if (event.getSource() == btnFruits) {
@@ -98,6 +87,7 @@ public class Controller {
 
     public void displayAllPurchases() {
     }
+
 
 
 }

@@ -29,10 +29,25 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
+        preloader();
+
+    }
+
+    public void preloader(){
         DatabaseConnector.createConnection();
 
-        //DBwrapper.insert("insert into Category values('Meals')"); --works
 
 
+
+        //testing sql query with view
+        /*
+        DBwrapper.select("select * from ItemsWithCategory where CategoryName='Fruit'");
+        while(DBwrapper.getResultSet().next()){
+            System.out.print("Name: " + DBwrapper.getResultSet().getString("ProductName") + " | ");
+            System.out.print("Price: " + DBwrapper.getResultSet().getDouble("Price") + " | ");
+            System.out.print("Gramm: " + DBwrapper.getResultSet().getInt("Gramm") + " | ");
+            System.out.println("Category: " + DBwrapper.getResultSet().getString("CategoryName"));
+        }
+        */
     }
 }

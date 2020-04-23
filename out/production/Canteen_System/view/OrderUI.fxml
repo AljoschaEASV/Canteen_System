@@ -20,7 +20,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
     <children>
-        <AnchorPane layoutX="243.0" layoutY="-1.0" prefHeight="615.0" prefWidth="607.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="mainMenuPane" layoutX="243.0" layoutY="-1.0" prefHeight="615.0" prefWidth="607.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>
                 <DropShadow />
             </effect>
@@ -114,7 +114,7 @@
                     </children></Pane>
             </children>
         </AnchorPane>
-        <AnchorPane prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
                 <AnchorPane layoutY="1.0" prefHeight="615.0" prefWidth="48.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
                     <effect>
