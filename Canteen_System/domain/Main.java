@@ -1,15 +1,11 @@
 package domain;
 
+import Application.DatabaseConnector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import Application.DBwrapper;
-import Application.DatabaseConnector;
-
-import java.sql.ResultSet;
 
 public class Main extends Application {
 
@@ -31,7 +27,7 @@ public class Main extends Application {
         }
     }
 
-    public void preloader(){
+    public void preloader() {
         DatabaseConnector.createConnection();
 
         //testing sql query with view

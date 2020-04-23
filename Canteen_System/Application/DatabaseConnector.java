@@ -22,11 +22,11 @@ public class DatabaseConnector {
         return con;
     }
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         return con;
     }
 
-    public static void manualDisconnect(){
+    public static void manualDisconnect() {
         try {
             con.close();
         } catch (SQLException e) {

@@ -47,8 +47,7 @@ public class Customer extends User {
         this.customerBalance = employeeBalance;
     }
 
-    public int getcustomerCardID()
-    {
+    public int getcustomerCardID() {
         return this.customerCardID;
     }
 
@@ -60,8 +59,7 @@ public class Customer extends User {
         this.customerCardID = employeeCardID;
     }
 
-    public String getcustomerContact()
-    {
+    public String getcustomerContact() {
         return this.customerContact;
     }
 

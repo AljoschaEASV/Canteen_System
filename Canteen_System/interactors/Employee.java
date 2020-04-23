@@ -62,6 +62,7 @@ public class Employee extends User {
     public String getEmpEmail() {
         return this.empEmail;
     }
+
     /**
      * @param empEmail
      */
