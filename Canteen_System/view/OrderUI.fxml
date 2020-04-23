@@ -36,9 +36,7 @@
                         <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
                     </children>
                 </Pane>
-            <TableView fx:id="tableview_fruit" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView fx:id="tableview_drinks" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView fx:id="tableview_warmlunch" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TableView fx:id="tableview_items" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
