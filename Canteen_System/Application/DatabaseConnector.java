@@ -10,9 +10,9 @@ import java.util.logging.Logger;
 
 public class DatabaseConnector {
 
-    Connection con;
+    static Connection con;
 
-    public java.sql.Connection createConnection() {
+    public static java.sql.Connection createConnection() {
         try {
             con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ECCO_Canteen", "sa", "123456");
             System.out.println("Connected");
@@ -20,5 +20,17 @@ public class DatabaseConnector {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, (String) null, e);
         }
         return con;
+    }
+
+    public static Connection getConnection(){
+        return con;
+    }
+
+    public static void manualDisconnect(){
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

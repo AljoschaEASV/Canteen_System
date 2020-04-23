@@ -6,10 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import Application.DBwrapper;
+import Application.DatabaseConnector;
+
+import java.sql.ResultSet;
+
 public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
     }
 
     @Override
@@ -22,6 +28,10 @@ public class Main extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        DatabaseConnector.createConnection();
+
+        //DBwrapper.insert("insert into Category values('Meals')"); --works
 
 
     }
