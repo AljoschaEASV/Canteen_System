@@ -92,10 +92,9 @@
                 </MenuBar>
             <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0">
                <columns>
-                  <TableColumn fx:id="orderColumnName" prefWidth="115.0" text="Item" />
-                  <TableColumn fx:id="orderColumnPrice" prefWidth="66.0" text="Price" />
-               </columns>
-            </TableView>
+                  <TableColumn fx:id="orderColumnItem" prefWidth="118.0" text="Item" />
+                  <TableColumn fx:id="orderColumnPrice" prefWidth="63.0" text="Price" />
+               </columns></TableView>
             </children>
             <effect>
                 <DropShadow />

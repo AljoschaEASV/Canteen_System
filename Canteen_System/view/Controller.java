@@ -14,10 +14,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Callback;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -30,15 +32,22 @@ public class Controller {
     @FXML
     private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch;
     @FXML
-    private TableView tableview_items;
+    private TableView tableview_items, tableview_orderBasket;
+    @FXML
+    private TableColumn orderColumnItem, orderColumnPrice;
 
-    private ObservableList<ObservableList<String>> itemsList = FXCollections.observableArrayList();
+    private ObservableList<ObservableList<String>> itemsList;
+    private ObservableList<ObservableList<String>> basketList;
 
     @FXML
     private void initialize() throws SQLException {
+        itemsList = FXCollections.observableArrayList();
+        basketList = FXCollections.observableArrayList();
 
-    fillList("WarmLunch");
+        orderColumnItem.setCellValueFactory(new PropertyValueFactory<>("ProductName"));
+        orderColumnPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
 
+        fillList("WarmLunch");
     }
 
     public void handleButtonAction(javafx.event.ActionEvent event) throws SQLException {
@@ -77,9 +86,12 @@ public class Controller {
                 public void handle(MouseEvent event) {
                     if(event.getButton().equals(MouseButton.PRIMARY)) {
                         if (event.getClickCount() == 2) {
-                            ObservableList<String> selection = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
+                            ObservableList<String> row = FXCollections.observableArrayList();
+                            row = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
+                            row.remove(2,5);
 
-                            System.out.println(selection);
+                            basketList.add(row);
+                            tableview_orderBasket.setItems(basketList);
                         }
 
                     }
@@ -123,7 +135,6 @@ public class Controller {
         DBwrapper.select("select ProductName, Price, GrammOrMl, ProductDescription, Amount from ItemsWithCategoryAndStock where CategoryName='" + itemCategory + "'");
 
         for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
-            //We are using non property style for making dynamic table
             final int j = i;
             TableColumn col = new TableColumn(DBwrapper.getResultSet().getMetaData().getColumnName(i+1));
             col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
@@ -132,13 +143,11 @@ public class Controller {
         }
 
         while(DBwrapper.getResultSet().next()){
-            //Iterate Row
             ObservableList<String> row = FXCollections.observableArrayList();
             for(int i=1 ; i<=DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
-                //Iterate Column
                 row.add(DBwrapper.getResultSet().getString(i));
             }
-            System.out.println("Row [1] added "+ row );
+            System.out.println("Row added "+ row );
             itemsList.add(row);
         }
         tableview_items.setItems(itemsList);
