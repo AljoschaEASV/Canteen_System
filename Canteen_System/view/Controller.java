@@ -109,7 +109,7 @@ public class Controller {
         tableview_warmlunch.refresh();
 
         //filling warmlunch tableview
-        DBwrapper.select("select ProductName, Price, Gramm, ProductDescription from ItemsWithCategory where CategoryName='WarmLunch'");
+        DBwrapper.select("select ProductName, Price, GrammOrMl, ProductDescription from ItemsWithCategory where CategoryName='WarmLunch'");
 
         for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
             //We are using non property style for making dynamic table
@@ -139,7 +139,7 @@ public class Controller {
         tableview_fruit.refresh();
 
         //filling fruitList tableview
-        DBwrapper.select("select ProductName, Price, Gramm, ProductDescription from ItemsWithCategory where CategoryName='Fruit'");
+        DBwrapper.select("select ProductName, Price, GrammOrMl, ProductDescription from ItemsWithCategory where CategoryName='Fruit'");
 
         for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
             //We are using non property style for making dynamic table
@@ -175,7 +175,7 @@ public class Controller {
         tableview_drinks.refresh();
 
         //filling fruitList tableview
-        DBwrapper.select("select ProductName, Price, Gramm, ProductDescription from ItemsWithCategory where CategoryName='Drink'");
+        DBwrapper.select("select ProductName, Price, GrammOrMl, ProductDescription from ItemsWithCategory where CategoryName='Drink'");
 
         for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
             //We are using non property style for making dynamic table
