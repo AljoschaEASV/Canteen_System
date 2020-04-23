@@ -23,15 +23,12 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-
 public class Controller {
 
     @FXML
-    private Pane pnl_warmlunch, pnl_fruit, pnl_drinks, pnl_checkout;
+    private Pane pnl_checkout;
     @FXML
     private JFXButton btnCheckOut, btnDrinks, btnFruits, btnWarmLunch;
-    @FXML
-    private JFXListView<?> orderList;
     @FXML
     private TableView tableview_items;
 
