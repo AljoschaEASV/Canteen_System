@@ -64,7 +64,6 @@ public class DBwrapper {
             result.close();
             prpstmt.close();
             DatabaseConnector.getConnection().close();
-            DatabaseConnector.getConnection().close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

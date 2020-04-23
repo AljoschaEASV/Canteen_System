@@ -30,11 +30,12 @@ public class Controller {
     @FXML
     private JFXListView<?> orderList;
     @FXML
-    private TableView tableview_warmlunch, tableview_fruit, tableview_drinks;
+    private TableView tableview_warmlunch, tableview_fruit, tableview_drinks, tableview_orderBasket;
 
     private ObservableList<ObservableList> warmlunchList = FXCollections.observableArrayList();
     private ObservableList<ObservableList> fruitList = FXCollections.observableArrayList();
     private ObservableList<ObservableList> drinksList = FXCollections.observableArrayList();
+    private ObservableList<ObservableList> basketList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() throws SQLException {

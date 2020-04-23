@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -91,7 +92,12 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-            <TableView layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0" />
+            <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" prefHeight="266.0" prefWidth="182.0">
+               <columns>
+                  <TableColumn fx:id="orderColumnName" prefWidth="115.0" text="Item" />
+                  <TableColumn fx:id="orderColumnPrice" prefWidth="66.0" text="Price" />
+               </columns>
+            </TableView>
             </children>
             <effect>
                 <DropShadow />
