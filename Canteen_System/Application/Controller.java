@@ -87,7 +87,7 @@ public class Controller {
                 public void handle(MouseEvent event) {
                     if(event.getButton().equals(MouseButton.PRIMARY)) {
                         if (event.getClickCount() == 2) {
-                            if(tableview_orderBasket.getItems().size()==0){
+                            if(tableview_orderBasket.getColumns().size()==0){
                                 DBwrapper.select("select ProductName, Price from Items");
                                 try {
                                     for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
