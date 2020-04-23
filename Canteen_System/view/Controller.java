@@ -32,7 +32,7 @@ public class Controller {
     @FXML
     private TableView tableview_items;
 
-    private ObservableList<ObservableList> itemsList = FXCollections.observableArrayList();
+    private ObservableList<ObservableList<String>> itemsList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() throws SQLException {
@@ -58,29 +58,28 @@ public class Controller {
         }
     }
 
-    public void addCategoryClicked(ActionEvent event)
-    {
-
-    }
-    public void addProductClicked(ActionEvent event)
-    {
-
-    }
-    public void viewSalesClicked(ActionEvent event)
-    {
+    public void addCategoryClicked(ActionEvent event) {
 
     }
 
-    /*public void addItemToBasket() {
+    public void addProductClicked(ActionEvent event) {
+
+    }
+
+    public void viewSalesClicked(ActionEvent event) {
+
+    }
+
+    public void addItemToBasket(MouseEvent event) {
         try {
-            tbData.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            tableview_items.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
                     if(event.getButton().equals(MouseButton.PRIMARY)) {
                         if (event.getClickCount() == 2) {
-                            MediaFile selection = tbData.getSelectionModel().getSelectedItem();
+                            ObservableList<String> selection = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
 
-                            mainController.runSingleChoice(selection);
+                            System.out.println(selection);
                         }
 
                     }
@@ -90,20 +89,16 @@ public class Controller {
         {
             System.out.println("Error");
         }
-    }*/
-
+    }
 
     public void deleteItemFromBasket() {
     }
 
-
     public void showCurrentStockAvailable() {
     }
 
-
     public void calculatePriceForItems() {
     }
-
 
     public void displayTrendCurve() {
     }
@@ -120,13 +115,11 @@ public class Controller {
     public void displayAllPurchases() {
     }
 
-
     private void fillList(String itemCategory) throws SQLException {
         itemsList.clear();
         tableview_items.getColumns().clear();
         tableview_items.refresh();
 
-        //filling warmlunch tableview
         DBwrapper.select("select ProductName, Price, GrammOrMl, ProductDescription, Amount from ItemsWithCategoryAndStock where CategoryName='" + itemCategory + "'");
 
         for(int i=0 ; i<DBwrapper.getResultSet().getMetaData().getColumnCount(); i++){
@@ -134,7 +127,6 @@ public class Controller {
             final int j = i;
             TableColumn col = new TableColumn(DBwrapper.getResultSet().getMetaData().getColumnName(i+1));
             col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(j).toString()));
-
             tableview_items.getColumns().addAll(col);
             System.out.println("Column ["+i+"] ");
         }
@@ -146,7 +138,7 @@ public class Controller {
                 //Iterate Column
                 row.add(DBwrapper.getResultSet().getString(i));
             }
-            System.out.println("Row [1] added "+row );
+            System.out.println("Row [1] added "+ row );
             itemsList.add(row);
         }
         tableview_items.setItems(itemsList);
