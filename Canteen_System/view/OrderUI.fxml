@@ -100,12 +100,13 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" onMouseClicked="#deleteItemFromBasket" prefHeight="266.0" prefWidth="182.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="6.0" />
+                <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" onMouseClicked="#deleteItemFromBasket" prefHeight="244.0" prefWidth="182.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="6.0" />
                   <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="2.0">
                       <image>
                           <Image url="@images/checkout.png" />
                       </image>
                   </ImageView>
+            <Label fx:id="lbl_total" layoutX="56.0" layoutY="554.0" text="Total: " />
             </children>
             <effect>
                 <DropShadow />

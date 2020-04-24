@@ -9,10 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +33,8 @@ public class Controller {
     private CategoryAxis x;
     @FXML
     private NumberAxis y;
+    @FXML
+    private Label lbl_total;
 
 
 
@@ -149,6 +148,8 @@ public class Controller {
                             row = (ObservableList<String>) tableview_items.getSelectionModel().getSelectedItem();
                             basketList.add(row);
                             tableview_orderBasket.setItems(basketList);
+
+                            calculateTotal();
                         }
 
                     }
@@ -170,6 +171,8 @@ public class Controller {
                             basketList.remove(tableview_orderBasket.getSelectionModel().getSelectedItem());
                             tableview_orderBasket.getSelectionModel().clearSelection();
                             tableview_orderBasket.setItems(basketList);
+
+                            calculateTotal();
                         }
                     }
                 }
@@ -225,6 +228,22 @@ public class Controller {
         tableview_items.setItems(itemsList);
     }
 
+    private void calculateTotal(){
+        Object itemtype;
+        TableColumn prices = (TableColumn) tableview_orderBasket.getColumns().get(1);
+
+        int rows = tableview_orderBasket.getItems().size();
+        String value;
+
+        float total=0;
+        for(int i=0;i<rows;i++){
+            itemtype = tableview_orderBasket.getItems().get(i);
+            value = (String) prices.getCellObservableValue(itemtype).getValue();
+            total += Float.parseFloat(value);
+        }
+
+        lbl_total.setText("Total: " + total);
+    }
 }
 
 
