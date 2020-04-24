@@ -31,8 +31,6 @@ public class Controller {
     @FXML
     private TableView tableview_items, tableview_orderBasket;
     @FXML
-    private TableColumn orderColumnName, orderColumnPrice;
-    @FXML
     private LineChart<String , Integer> lineChart;
     @FXML
     private CategoryAxis x;
