@@ -31,15 +31,11 @@ public class Controller {
     @FXML
     private TableView tableview_items, tableview_orderBasket;
     @FXML
-    private TableColumn orderColumnName, orderColumnPrice;
-    @FXML
     private LineChart<String , Integer> lineChart;
     @FXML
     private CategoryAxis x;
     @FXML
     private NumberAxis y;
-
-
 
     private ObservableList<ObservableList<String>> itemsList;
     private ObservableList<ObservableList<String>> basketList;
