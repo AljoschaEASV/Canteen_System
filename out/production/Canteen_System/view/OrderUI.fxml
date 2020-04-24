@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
     <children>
         <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>
@@ -38,19 +38,19 @@
                         <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
                     </children>
                 </Pane>
-            <Pane fx:id="pnlBarChart" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <LineChart fx:id="lineChart" layoutY="6.0" prefHeight="493.0" prefWidth="613.0" title="Trend Curve">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" fx:id="x" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="y" side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-                  <JFXButton fx:id="btnBarChart" layoutX="237.0" layoutY="557.0" onAction="#loadChart" prefHeight="44.0" prefWidth="140.0" text="Load Data" />
-               </children>
-            </Pane>
+                <Pane fx:id="pnlBarChart" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <LineChart fx:id="lineChart" layoutY="6.0" prefHeight="493.0" prefWidth="613.0" title="Trend Curve">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" fx:id="x" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="y" side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                        <JFXButton fx:id="btnBarChart" layoutX="237.0" layoutY="557.0" onAction="#loadChart" prefHeight="44.0" prefWidth="140.0" text="Load Data" />
+                    </children>
+                </Pane>
                 <TableView fx:id="tableview_items" onMouseClicked="#addItemToBasket" prefHeight="615.0" prefWidth="613.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0" />
             </children>
         </AnchorPane>
@@ -95,17 +95,17 @@
                                 <MenuItem fx:id="addProduct" mnemonicParsing="false" onAction="#addProductClicked" text="Add Product" />
                                 <MenuItem fx:id="viewSales" mnemonicParsing="false" onAction="#viewSalesClicked" text="view Sales" />
                                 <MenuItem mnemonicParsing="false" onAction="#checkBalanceClicked" text="Check Balance" />
-                                <MenuItem mnemonicParsing="false" text="Close" />
+                                <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeProgram" text="Close" />
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
                 <TableView fx:id="tableview_orderBasket" layoutX="56.0" layoutY="305.0" onMouseClicked="#deleteItemFromBasket" prefHeight="266.0" prefWidth="182.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="6.0" />
-                  <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="2.0">
-                      <image>
-                          <Image url="@images/checkout.png" />
-                      </image>
-                  </ImageView>
+                <ImageView fitHeight="44.0" fitWidth="39.0" layoutX="7.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="2.0">
+                    <image>
+                        <Image url="@images/checkout.png" />
+                    </image>
+                </ImageView>
             </children>
             <effect>
                 <DropShadow />
