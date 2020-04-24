@@ -8,10 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -41,6 +38,8 @@ public class Controller {
     private CategoryAxis x;
     @FXML
     private NumberAxis y;
+
+
 
     private ObservableList<ObservableList<String>> itemsList;
     private ObservableList<ObservableList<String>> basketList;
@@ -101,20 +100,29 @@ public class Controller {
 
     public void loadChart(ActionEvent event) throws SQLException {
 
-        // NOT DONE!!  "TimeDate" should be stored on the Xaxis. "Amount" should be stored on Yaxis. and every productname needs a XYChart.series
 
+        String productName = "SELECT ProductName From Items";
+        String query = "Select * from InvoiceItemList Inner join Invoice on InvoiceItemList.InvoiceItemlistID = Invoice.InvoiceID";
 
-        String query = "SELECT Item, Amount from InvoiceItemList";
-        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-
+        ResultSet product = DatabaseConnector.createConnection().createStatement().executeQuery(productName);
         ResultSet rs = DatabaseConnector.createConnection().createStatement().executeQuery(query);
 
-        while (rs.next()) {
-            series.getData().add(new XYChart.Data<>(rs.getString(1), rs.getInt(2)));
 
+            while (product.next()) {
+                String nameVal = product.getString("ProductName");
+                XYChart.Series<String, Integer> series = new XYChart.Series<>();
+                series.setName(nameVal);
+
+                while (rs.next()) {
+                    series.getData().add(new XYChart.Data<>(rs.getString(6), rs.getInt(3)));
+
+                }
+                lineChart.setAnimated(false);
+                lineChart.getData().addAll(series);
+
+            }
         }
-        lineChart.getData().add(series);
-    }
+
 
 
 
