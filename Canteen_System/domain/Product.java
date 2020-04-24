@@ -16,13 +16,11 @@ public class Product {
     }
 
     public void modifyProduct() {
-        // TODO - implement Product.modifyProduct
-        throw new UnsupportedOperationException();
+
     }
 
     public void SelectProduct() {
-        // TODO - implement Product.SelectProduct
-        throw new UnsupportedOperationException();
+
     }
 
 }

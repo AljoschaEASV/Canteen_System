@@ -19,13 +19,11 @@ public class Stock {
      * @param productID
      */
     public void modifyStock(int productID) {
-        // TODO - implement Stock.modifyStock
-        throw new UnsupportedOperationException();
+
     }
 
     public void selectItemFromStock() {
-        // TODO - implement Stock.selectItemFromStock
-        throw new UnsupportedOperationException();
+
     }
 
 }
