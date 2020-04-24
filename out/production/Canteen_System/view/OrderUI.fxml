@@ -20,40 +20,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
     <children>
-        <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <effect>
-                <DropShadow />
-            </effect>
-            <children>
-                <Pane fx:id="pnl_checkout" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="49.0" text="Payment Window">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
-                        <TextField alignment="CENTER" layoutX="230.0" layoutY="239.0" promptText="Scan ID-Card" />
-                        <TextField alignment="CENTER" layoutX="231.0" layoutY="188.0" promptText="Total amount to be paid" />
-                        <Button alignment="CENTER" layoutX="399.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Cancel Transaction" textFill="#c31010" />
-                        <Button alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
-                    </children>
-                </Pane>
-            <Pane fx:id="pnlBarChart" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <LineChart fx:id="lineChart" layoutY="6.0" prefHeight="493.0" prefWidth="613.0" title="Trend Curve">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" fx:id="x" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="y" side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-                  <JFXButton fx:id="btnBarChart" layoutX="237.0" layoutY="557.0" onAction="#loadChart" prefHeight="44.0" prefWidth="140.0" text="Load Data" />
-               </children>
-            </Pane>
-                <TableView fx:id="tableview_items" onMouseClicked="#addItemToBasket" prefHeight="615.0" prefWidth="613.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0" />
-            </children>
-        </AnchorPane>
         <AnchorPane fx:id="sidebarPane" prefHeight="616.0" prefWidth="193.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
                 <AnchorPane layoutY="1.0" prefHeight="615.0" prefWidth="48.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.topAnchor="0.0">
@@ -111,6 +77,41 @@
             <effect>
                 <DropShadow />
             </effect>
+        </AnchorPane>
+        <AnchorPane fx:id="mainMenuPane" layoutX="246.0" layoutY="-1.0" prefHeight="615.0" prefWidth="604.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <DropShadow />
+            </effect>
+            <children>
+                <TableView fx:id="tableview_items" onMouseClicked="#addItemToBasket" prefHeight="615.0" prefWidth="613.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="pnlBarChart" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <LineChart fx:id="lineChart" layoutY="6.0" prefHeight="493.0" prefWidth="613.0" title="Trend Curve">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="x" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="y" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <JFXButton fx:id="btnBarChart" layoutX="237.0" layoutY="557.0" onAction="#loadChart" prefHeight="44.0" prefWidth="140.0" text="Load Data" />
+               </children>
+            </Pane>
+                <Pane fx:id="pnl_checkout" prefHeight="615.0" prefWidth="613.0" style="-fx-background-color: #f0f7ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="49.0" text="Payment Window">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txt_id" alignment="CENTER" layoutX="230.0" layoutY="239.0" promptText="Scan ID-Card" />
+                        <TextField fx:id="txt_total" alignment="CENTER" layoutX="231.0" layoutY="188.0" promptText="Total amount to be paid" />
+                        <Button alignment="CENTER" layoutX="399.0" layoutY="298.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="118.0" text="Cancel Transaction" textFill="#c31010" />
+                        <Button fx:id="btn_pay" alignment="CENTER" layoutX="92.0" layoutY="298.0" mnemonicParsing="false" onAction="#payOrder" prefHeight="102.0" prefWidth="118.0" text="Accept Payment" textFill="#189a1f" />
+                  <Label fx:id="lbl_output" layoutX="237.0" layoutY="341.0" />
+                    </children>
+                </Pane>
+            </children>
         </AnchorPane>
     </children>
 </AnchorPane>

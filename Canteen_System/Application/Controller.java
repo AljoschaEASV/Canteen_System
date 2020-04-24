@@ -42,7 +42,11 @@ public class Controller {
     @FXML
     private NumberAxis y;
     @FXML
-    private Label lbl_total;
+    private Label lbl_total, lbl_output;
+    @FXML
+    private TextField txt_total, txt_id;
+    @FXML
+    private Button btn_pay;
 
 
 
@@ -247,6 +251,24 @@ public class Controller {
         }
 
         lbl_total.setText("Total: " + total);
+        txt_total.setText(String.valueOf(total));
+    }
+
+    @FXML
+    private void payOrder() throws SQLException {
+        int id = Integer.parseInt(txt_id.getText());
+        if(txt_total.getText()!=null) {
+            float total = Float.parseFloat(txt_total.getText());
+            DBwrapper.select("select * from Customer where EmployeeID=" + id);
+            float balance = DBwrapper.getResultSet().getFloat("Balance");
+
+            if(balance<total){
+                lbl_output.setText("Not enough Balance");
+            } else {
+                DBwrapper.update("update Customer set Balance=" + (balance-total) + "where EmployeeID=" + id);
+                lbl_output.setText("payment done!");
+            }
+        }
     }
 }
 
